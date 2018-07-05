@@ -4,8 +4,11 @@
 int main(int argc, char **argv)
 {
 	int count;
+	int temp;
 	FILE *in, *out;
 	char buf[BUFSIZ];
+
+	printf("FILE* in addr = %p\n", in);
 
 	if(argc<3)
 	{
@@ -20,6 +23,10 @@ int main(int argc, char **argv)
 		return -1;
 	}
 
+	printf("FILE* in addr = %p\n", in);
+
+	temp = in->_fileno;
+	printf("fd=%d\n",temp);
 	// 대상 파일 열기
 	if((out = fopen(argv[2], "w"))==NULL)
 	{
