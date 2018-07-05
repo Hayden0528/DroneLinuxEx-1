@@ -37,6 +37,8 @@ int main(int argc, char *argv[])
 
 	while((count = read(fdIn, buf, sizeof(buf))) > 0)
 		write(fdOut, buf, count);
+	
+	sleep(10);
 
 	close(fdIn);
 	close(fdOut);
